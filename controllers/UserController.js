@@ -11,9 +11,9 @@ class UserController {
         res.render('registerForm')
     }
     static postRegister(req, res) {
-        const { username, password, role } = req.body
+        const { email, password} = req.body
         
-        User.create({username, password, role})
+        User.create({email, password})
         .then(newUser => {
             res.redirect("/login")
         })
@@ -22,8 +22,8 @@ class UserController {
         })
     }
     static postLogIn(req, res) {
-        const {username, password} = req.body
-        User.findOne({where : {username}})
+        const {email, password} = req.body
+        User.findOne({where : {email}})
         .then(user => {
             if(user) {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
@@ -32,12 +32,12 @@ class UserController {
                     return res.redirect("/home")
                 }
                 else {
-                    const error = "invalid username or password"
+                    const error = "invalid email or password"
                     return res.redirect(`/login?error=${error}`)
                 }
             }
             else {
-                const error = "invalid username or password"
+                const error = "invalid email or password"
                 return res.redirect(`/login?error=${error}`)
             }
         })

@@ -29,7 +29,7 @@ class UserController {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
                 if(isValidPassword) {
                     req.session.userId = user.id
-                    return res.redirect("/home")
+                    return res.redirect("/cars")
                 }
                 else {
                     const error = "invalid email or password"

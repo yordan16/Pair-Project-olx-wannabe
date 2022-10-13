@@ -27,11 +27,67 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Car.init({
-    brand: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    price: DataTypes.INTEGER,
-    imageUrl: DataTypes.STRING,
-    category: DataTypes.STRING,
+    brand: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+      validate: {
+        notNull: {
+          msg: `Please enter brand name of your car`
+        },
+        notEmpty: {
+          msg: `Please enter brand name of your car`
+        },
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false, 
+      validate: {
+        notNull: {
+          msg: `Please enter description of your car`
+        },
+        notEmpty: {
+          msg: `Please enter description of your car`
+        },
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false, 
+      validate: {
+        notNull: {
+          msg: `Please enter price of your car`
+        },
+        notEmpty: {
+          msg: `Please enter price of your car`
+        },
+      }
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+      validate: {
+        notNull: {
+          msg: `Please enter your car url image`
+        },
+        notEmpty: {
+          msg: `Please enter your car url image`
+        },
+      }
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+      validate: {
+        notNull: {
+          msg: `Please enter your car url image`
+        },
+        notEmpty: {
+          msg: `Please enter your car url image`
+        },
+      }
+    },
+    
     UserId: DataTypes.INTEGER
   }, {
     sequelize,

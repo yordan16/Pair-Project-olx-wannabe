@@ -23,6 +23,8 @@ class Controller {
     }
 
     static renderAddCar(req, res) {
+        const id = req.params.id
+        let error = req.query.errors?JSON.parse(req.query.errors):''
         res.render('booking')
     }
 

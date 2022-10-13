@@ -20,6 +20,7 @@ class Controller {
         //     .catch(err => {
         //         res.send(err)
         //     })
+        
     }
 
     static renderAddCar(req, res) {

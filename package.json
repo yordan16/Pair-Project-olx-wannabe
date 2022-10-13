@@ -1,8 +1,11 @@
 {
-  "name": "pair-project",
+  "name": "car",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +19,5 @@
     "express-session": "^1.17.3",
     "pg": "^8.8.0",
     "sequelize": "^6.25.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20",
-    "sequelize-cli": "^6.5.1"
   }
 }
